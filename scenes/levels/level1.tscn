@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dblvwxpiyf8xs"]
+
+[ext_resource type="Script" uid="uid://bdjbis6m1xptu" path="res://scripts/player/player.gd" id="1_x6ivy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ekttx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8w0r3"]
+height = 2.5986328
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8w0r3"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8w0r3"]
+
+[node name="Game" type="Node3D" unique_id=1099859059]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1375031674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36763406, -0.25141287, -3.7203598)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("ShaderMaterial_ekttx")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=872411616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.312344, 0)
+script = ExtResource("1_x6ivy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=844330841]
+mesh = SubResource("CapsuleMesh_8w0r3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=725083829]
+shape = SubResource("CapsuleShape3D_8w0r3")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1383139566]
+transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 6.7475047, 8.007374)
+keep_aspect = 0
+current = true
+fov = 65.347305
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=884181540]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=336053229]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=853606024]
+mesh = SubResource("PlaneMesh_8w0r3")

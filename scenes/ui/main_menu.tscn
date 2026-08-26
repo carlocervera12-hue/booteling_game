@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://dd8bjf7pt11dj"]
+
+[ext_resource type="Script" uid="uid://dxdk8t8710m8x" path="res://scripts/ui/control.gd" id="1_fe2o3"]
+[ext_resource type="Texture2D" uid="uid://budgv5t8thlqp" path="res://assets/images/background_v2.webp" id="2_1g8jr"]
+[ext_resource type="Shader" uid="uid://buklcxy8kq01x" path="res://scenes/ui/main_menu.gdshader" id="2_m1kxf"]
+[ext_resource type="Texture2D" uid="uid://d1ddnlp2vhewa" path="res://assets/ui/botoms.webp" id="3_1g8jr"]
+[ext_resource type="Texture2D" uid="uid://de7jkxr6wikia" path="res://assets/ui/title_menu}.webp" id="5_x2yvf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_btxxm"]
+shader = ExtResource("2_m1kxf")
+shader_parameter/blur_amount = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m8yj6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqysy"]
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cgmvo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxodi"]
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sjmnu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tcje"]
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6ivy"]
+atlas = ExtResource("3_1g8jr")
+region = Rect2(378.90112, 77.4953, 265.33997, 259.63367)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7mgy"]
+atlas = ExtResource("3_1g8jr")
+region = Rect2(646.9525, 623.414, 269.9049, 260.4897)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e15o"]
+atlas = ExtResource("3_1g8jr")
+region = Rect2(656.3678, 77.32732, 260.48962, 260.48962)
+
+[node name="Control" type="Control" unique_id=2101188019]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fe2o3")
+
+[node name="background_menu" type="TextureRect" parent="." unique_id=53044461]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1g8jr")
+expand_mode = 1
+
+[node name="blurr" type="ColorRect" parent="background_menu" unique_id=1154188463]
+material = SubResource("ShaderMaterial_btxxm")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="play" type="Button" parent="." unique_id=768797777]
+visible = false
+layout_mode = 0
+offset_left = 220.0
+offset_top = 549.0
+offset_right = 308.0
+offset_bottom = 637.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m8yj6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dqysy")
+text = "▶"
+
+[node name="quit" type="Button" parent="." unique_id=622369208]
+visible = false
+layout_mode = 0
+offset_left = 195.0
+offset_top = 761.0
+offset_right = 283.0
+offset_bottom = 849.0
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cgmvo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vxodi")
+text = "X"
+
+[node name="options" type="Button" parent="." unique_id=163640729]
+visible = false
+layout_mode = 0
+offset_left = 343.0
+offset_top = 760.0
+offset_right = 431.0
+offset_bottom = 848.0
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sjmnu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1tcje")
+text = "⚙"
+
+[node name="play_v2" type="TextureButton" parent="." unique_id=376970752]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 379.99997
+offset_right = 441.0
+offset_bottom = 639.0
+scale = Vector2(0.6555046, 0.66655976)
+texture_normal = SubResource("AtlasTexture_x6ivy")
+
+[node name="settings_v2" type="TextureButton" parent="." unique_id=1428157923]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 758.0
+offset_right = 639.0
+offset_bottom = 1018.00006
+scale = Vector2(0.65578204, 0.54443026)
+texture_normal = SubResource("AtlasTexture_w7mgy")
+
+[node name="music_v2" type="TextureButton" parent="." unique_id=111441157]
+layout_mode = 0
+offset_left = 2.000001
+offset_top = 762.0
+offset_right = 262.0
+offset_bottom = 1022.0
+scale = Vector2(0.5304198, 0.5132899)
+texture_normal = SubResource("AtlasTexture_4e15o")
+
+[node name="title" type="TextureRect" parent="." unique_id=2040191638]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -67.0
+offset_top = 35.0
+offset_right = 95.0
+offset_bottom = 215.0
+grow_horizontal = 2
+texture = ExtResource("5_x2yvf")
+expand_mode = 1
+stretch_mode = 6
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="play_v2" to="." method="_on_play_v_2_pressed"]
