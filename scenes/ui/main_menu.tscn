@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://buklcxy8kq01x" path="res://scenes/ui/main_menu.gdshader" id="2_m1kxf"]
 [ext_resource type="Texture2D" uid="uid://d1ddnlp2vhewa" path="res://assets/ui/botoms.webp" id="3_1g8jr"]
 [ext_resource type="Texture2D" uid="uid://de7jkxr6wikia" path="res://assets/ui/title_menu}.webp" id="5_x2yvf"]
+[ext_resource type="MeshLibrary" uid="uid://ml68f2q86f5y" path="res://assets/meshLibraries/placeholder/BlocksMeshLib.tres" id="6_uhagc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_btxxm"]
 shader = ExtResource("2_m1kxf")
@@ -150,6 +151,15 @@ grow_horizontal = 2
 texture = ExtResource("5_x2yvf")
 expand_mode = 1
 stretch_mode = 6
+
+[node name="Node3D" type="Node3D" parent="." unique_id=227706594]
+
+[node name="GridMap" type="GridMap" parent="Node3D" unique_id=1360675092]
+mesh_library = ExtResource("6_uhagc")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(65535, 0, 0, 65535, 65535, 0, 65535, 65534, 0, 65535, 65533, 0, 65535, 1, 0, 0, 65535, 0, 1, 65535, 0, 2, 65533, 0, 2, 65534, 0, 2, 65535, 0, 2, 0, 0, 2, 1, 0, 4, 65533, 0, 5, 65533, 0, 6, 65533, 0, 5, 65534, 0, 5, 65535, 0, 5, 0, 0, 5, 1, 0, 4, 1, 0, 6, 1, 0)
+}
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

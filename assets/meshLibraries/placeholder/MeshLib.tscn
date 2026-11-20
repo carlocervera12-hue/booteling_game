@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bae4p5rmvso5h"]
+
+[ext_resource type="PackedScene" uid="uid://djfc8fmadqqaw" path="res://assets/meshLibraries/placeholder/GrassBlock.glb" id="1_yjwpt"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_hibjq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8s4bh"]
+
+[node name="GrassBlock" unique_id=586958461 instance=ExtResource("1_yjwpt")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="grass_block" parent_id_path=PackedInt32Array(1380351303) index="0" unique_id=1138634924]
+navigation_mesh = SubResource("NavigationMesh_hibjq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="grass_block/NavigationRegion3D" index="0" unique_id=1952776574]
+transform = Transform3D(0.189, 0, 0, 0, 0.19599998, 0, 0, 0, 0.18, 0, 1.3478968, 0)
+mesh = SubResource("BoxMesh_8s4bh")
